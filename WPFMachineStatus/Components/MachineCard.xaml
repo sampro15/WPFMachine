@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="WPFMachineStatus.Components.MachineCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFMachineStatus.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+
+    <Border BorderBrush="Gray" BorderThickness="1" Margin="5" Padding="10" CornerRadius="5">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <TextBlock Text="{Binding Name}"  Grid.Row="0" Grid.Column="0" FontWeight="Bold" FontSize="16"/>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
+                <Image Width="20" Height="20" Source="{Binding StatusIconPath}" Margin="0,0,5,0"/>
+                <TextBlock Text="{Binding Status}" Margin="10" />
+            </StackPanel>
+            <TextBlock Text="{Binding Description}" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Margin="10"/>
+
+            <TextBlock Text="{Binding Notes}" Grid.Row="1" Grid.Column="2" TextWrapping="Wrap" Margin="10"/>
+        </Grid>
+    </Border>
+</UserControl>
